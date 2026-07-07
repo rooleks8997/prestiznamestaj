@@ -4,15 +4,25 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <title>Prestiž | Kuhinje, plakari i nameštaj po meri</title>
-  <meta name="description" content="Prestiž izrađuje kuhinje, plakare, garderobere, TV komode, kupatilski i drugi nameštaj po meri u Beogradu i okolini." />
+  <title>Prestiž | Futuristički nameštaj po meri u Beogradu</title>
+  <meta name="description" content="Prestiž izrađuje moderne kuhinje, plakare, garderobere, TV komode i nameštaj po meri u Beogradu i okolini — izmera, predlog rešenja, izrada i montaža." />
+  <meta name="theme-color" content="#06080f" />
+  <meta property="og:title" content="Prestiž | Nameštaj po meri" />
+  <meta property="og:description" content="Kuhinje, plakari i enterijeri po meri — precizna izrada, čist dizajn i moderna rešenja za svaki prostor." />
+  <meta property="og:type" content="website" />
 
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Space+Grotesk:wght@600;700&display=swap" rel="stylesheet" />
   <link rel="preconnect" href="https://cdn.jsdelivr.net" />
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
   <link rel="stylesheet" href="style.css" />
 </head>
 
 <body>
+  <div class="site-bg" aria-hidden="true"></div>
+  <div class="cursor-glow" aria-hidden="true"></div>
+
   <header class="site-header" id="top">
     <a class="logo" href="#top" aria-label="Prestiž početna">
       <span class="logo-mark">P</span>
@@ -22,9 +32,10 @@
       </span>
     </a>
 
-    <nav class="nav">
+    <nav class="nav" aria-label="Glavna navigacija">
       <a href="#usluge">Usluge</a>
       <a href="#stilovi">Stilovi</a>
+      <a href="#prednosti">Prednosti</a>
       <a href="#proces">Proces</a>
       <a href="#kontakt">Kontakt</a>
     </nav>
@@ -33,19 +44,20 @@
   </header>
 
   <main>
-    <section class="hero">
+    <section class="hero" aria-label="Prestiž uvod">
       <div class="swiper hero-swiper">
         <div class="swiper-wrapper">
           <article class="swiper-slide hero-slide">
             <img src="images/hero-kuhinja.jpg" alt="Moderna kuhinja po meri" />
             <div class="hero-overlay"></div>
-            <div class="hero-content">
-              <p class="eyebrow">Prestiž • Beograd i okolina</p>
-              <h1>Kuhinje, plakari i nameštaj po meri</h1>
-              <p>Moderna rešenja po tačnim merama prostora — od izmere i dogovora do izrade i montaže.</p>
+            <div class="hero-grid"></div>
+            <div class="hero-content reveal">
+              <p class="eyebrow">Prestiž studio • Beograd i okolina</p>
+              <h1>Nameštaj po meri koji izgleda kao enterijer iz budućnosti</h1>
+              <p>Projektovanje, izrada i montaža kuhinja, plakara i enterijerskih elemenata po tačnim merama prostora.</p>
               <div class="hero-actions">
-                <a class="btn primary" href="tel:+381600000000">Pozovi odmah</a>
-                <a class="btn secondary" href="https://wa.me/381600000000" target="_blank" rel="noopener">WhatsApp upit</a>
+                <a class="btn primary" href="tel:+381600000000">Pozovi za izmeru</a>
+                <a class="btn secondary" href="https://wa.me/381600000000" target="_blank" rel="noopener">Pošalji slike prostora</a>
               </div>
             </div>
           </article>
@@ -53,10 +65,11 @@
           <article class="swiper-slide hero-slide">
             <img src="images/plakar.jpg" alt="Moderan plakar po meri" />
             <div class="hero-overlay"></div>
-            <div class="hero-content">
-              <p class="eyebrow">Plakari • Garderoberi • Ormari</p>
-              <h2>Ugradni plakari koji koriste svaki centimetar</h2>
-              <p>Klizna ili klasična vrata, rasveta, police, fioke i raspored prilagođen svakodnevnom korišćenju.</p>
+            <div class="hero-grid"></div>
+            <div class="hero-content reveal">
+              <p class="eyebrow">Plakari • Garderoberi • Hodnici</p>
+              <h2>Svaki centimetar prostora pretvaramo u koristan sistem</h2>
+              <p>Klizna ili klasična vrata, police, fioke, rasveta i raspored prilagođen stvarnom korišćenju.</p>
               <div class="hero-actions">
                 <a class="btn primary" href="#kontakt">Zatraži ponudu</a>
                 <a class="btn secondary" href="#stilovi">Pogledaj stilove</a>
@@ -67,10 +80,11 @@
           <article class="swiper-slide hero-slide">
             <img src="images/tv-zid.jpg" alt="TV komoda i zidni panel po meri" />
             <div class="hero-overlay"></div>
-            <div class="hero-content">
-              <p class="eyebrow">TV komode • Paneli • Police</p>
-              <h2>Čist dizajn, precizna izrada, ozbiljan utisak</h2>
-              <p>Minimalistički elementi, skriveni detalji, LED rasveta i kombinacija drveta, kamena i mat frontova.</p>
+            <div class="hero-grid"></div>
+            <div class="hero-content reveal">
+              <p class="eyebrow">TV zidovi • Paneli • Detalji</p>
+              <h2>Čiste linije, LED efekat i precizno uklapanje</h2>
+              <p>Minimalistički elementi, skriveni detalji i kombinacije materijala koje prostoru daju ozbiljan premium utisak.</p>
               <div class="hero-actions">
                 <a class="btn primary" href="tel:+381600000000">Kontakt</a>
                 <a class="btn secondary" href="#usluge">Šta radimo</a>
@@ -79,73 +93,86 @@
           </article>
         </div>
 
+        <div class="hero-panel reveal">
+          <span class="panel-label">PRESTIŽ SYSTEM</span>
+          <strong>Od ideje do montaže</strong>
+          <p>Pošaljete mere ili slike, dogovaramo stil, materijal i raspored, zatim izrađujemo nameštaj po meri.</p>
+        </div>
+
+        <div class="hero-stats reveal" aria-label="Kategorije izrade">
+          <div><strong>Kuhinje</strong><span>po meri</span></div>
+          <div><strong>Plakari</strong><span>od poda do plafona</span></div>
+          <div><strong>TV zidovi</strong><span>paneli i komode</span></div>
+        </div>
+
         <div class="swiper-pagination"></div>
         <div class="swiper-button-prev" aria-label="Prethodni slajd"></div>
         <div class="swiper-button-next" aria-label="Sledeći slajd"></div>
       </div>
     </section>
 
-    <section class="intro section">
-      <div class="intro-card">
+    <section class="intro section" aria-label="Kratak proces">
+      <div class="intro-card reveal">
         <span>01</span>
         <h3>Izmera</h3>
-        <p>Dolazak na teren, dimenzije prostora i dogovor oko rasporeda.</p>
+        <p>Proveravamo dimenzije, zidove, instalacije i realno stanje prostora.</p>
       </div>
-      <div class="intro-card">
+      <div class="intro-card reveal">
         <span>02</span>
         <h3>Predlog</h3>
-        <p>Biramo materijale, boje, okove i praktično rešenje za prostor.</p>
+        <p>Dogovaramo raspored, boje, frontove, okove, rasvetu i praktične detalje.</p>
       </div>
-      <div class="intro-card">
+      <div class="intro-card reveal">
         <span>03</span>
         <h3>Izrada</h3>
-        <p>Precizna izrada elemenata po meri i priprema za montažu.</p>
+        <p>Elementi se izrađuju po meri, sa fokusom na precizno uklapanje.</p>
       </div>
-      <div class="intro-card">
+      <div class="intro-card reveal">
         <span>04</span>
         <h3>Montaža</h3>
-        <p>Finalno uklapanje, nivelacija i završni detalji kod klijenta.</p>
+        <p>Nivelacija, uklapanje frontova i završni detalji na licu mesta.</p>
       </div>
     </section>
 
     <section class="section split" id="usluge">
-      <div>
+      <div class="section-copy reveal">
         <p class="eyebrow dark">Šta radimo</p>
-        <h2>Rešenja za ceo dom, izrađena po meri</h2>
-        <p class="lead">
-          Prestiž izrađuje funkcionalan i moderan nameštaj za stanove, kuće i poslovne prostore.
-          Fokus je na preciznoj meri, čistom izgledu i praktičnoj organizaciji prostora.
-        </p>
+        <h2>Kompletna rešenja za stanove, kuće i poslovne prostore</h2>
+        <p class="lead">Prestiž izrađuje nameštaj koji se uklapa u prostor, a ne obrnuto. Fokus je na preciznim merama, čistom izgledu i rasporedu koji stvarno rešava svakodnevno korišćenje.</p>
       </div>
 
       <div class="services-grid">
-        <article>
+        <article class="service-card reveal">
+          <span>01</span>
           <h3>Kuhinje po meri</h3>
-          <p>Donji i gornji elementi, ostrva, ugradni aparati, rasveta i radne ploče.</p>
+          <p>Donji i gornji elementi, ugradni aparati, radne ploče, LED rasveta i pametna organizacija.</p>
         </article>
-        <article>
-          <h3>Plakari i ormari</h3>
-          <p>Klizni plakari, garderoberi, ormari od poda do plafona i hodnici.</p>
+        <article class="service-card reveal">
+          <span>02</span>
+          <h3>Plakari i garderoberi</h3>
+          <p>Klizni plakari, klasična vrata, fioke, police, ogledala i rešenja od poda do plafona.</p>
         </article>
-        <article>
+        <article class="service-card reveal">
+          <span>03</span>
           <h3>TV komode i paneli</h3>
-          <p>Moderni TV zidovi, viseće komode, police i dekorativni paneli.</p>
+          <p>Moderni TV zidovi, viseće komode, dekorativni paneli, police i skriveni kablovi.</p>
         </article>
-        <article>
-          <h3>Kupatilski nameštaj</h3>
-          <p>Ormarići, fioke, ogledala sa rasvetom i elementi otporni na vlagu.</p>
+        <article class="service-card reveal">
+          <span>04</span>
+          <h3>Kupatilski elementi</h3>
+          <p>Ormarići, fioke, ogledala sa rasvetom i elementi prilagođeni uslovima kupatila.</p>
         </article>
       </div>
     </section>
 
     <section class="section gallery-section" id="stilovi">
-      <div class="section-title">
+      <div class="section-title reveal">
         <p class="eyebrow dark">Primeri stilova</p>
-        <h2>Moderan izgled koji klijenti najčešće traže</h2>
-        <p>Ove slike su primeri stilova i vizuelna inspiracija za rešenja koja možemo prilagoditi vašem prostoru.</p>
+        <h2>Vizuelni pravci koje najčešće traže moderni klijenti</h2>
+        <p>Slike služe kao inspiracija za stil. Svako rešenje se prilagođava vašim merama, budžetu i načinu korišćenja prostora.</p>
       </div>
 
-      <div class="swiper gallery-swiper">
+      <div class="swiper gallery-swiper reveal">
         <div class="swiper-wrapper">
           <div class="swiper-slide gallery-card">
             <img src="images/hero-kuhinja.jpg" alt="Primer moderne kuhinje" />
@@ -176,29 +203,45 @@
       </div>
     </section>
 
+    <section class="section precision" id="prednosti">
+      <div class="precision-card reveal">
+        <div>
+          <p class="eyebrow">Zašto Prestiž</p>
+          <h2>Ne prodajemo gotov komad — pravimo rešenje za konkretan prostor</h2>
+          <p>Najveća razlika je u detaljima: dobra izmera, logičan raspored, pravilno odabrani okovi, čiste fuge, ravni frontovi i montaža bez improvizacije.</p>
+        </div>
+        <div class="check-list">
+          <p><span>✓</span> Predlog rasporeda prema stvarnim merama</p>
+          <p><span>✓</span> Savet oko materijala, boja i održavanja</p>
+          <p><span>✓</span> Izrada kuhinja, plakara, komoda i kupatilskih elemenata</p>
+          <p><span>✓</span> Dogovor oko budžeta pre početka izrade</p>
+        </div>
+      </div>
+    </section>
+
     <section class="section process" id="proces">
-      <div class="section-title">
+      <div class="section-title reveal">
         <p class="eyebrow dark">Proces</p>
         <h2>Kako izgleda saradnja</h2>
       </div>
 
       <div class="timeline">
-        <div>
+        <div class="reveal">
           <span>1</span>
           <h3>Pošaljete mere ili slike prostora</h3>
-          <p>Možete poslati osnovne dimenzije, fotografije i ideju šta želite.</p>
+          <p>Najbrže je da pošaljete fotografije, širinu, visinu, dubinu i kratko šta želite.</p>
         </div>
-        <div>
+        <div class="reveal">
           <span>2</span>
           <h3>Dogovaramo stil i raspored</h3>
-          <p>Biramo boje, materijal, okove, raspored elemenata i okvirni budžet.</p>
+          <p>Biramo boje, materijale, okove, raspored elemenata i okvirni budžet.</p>
         </div>
-        <div>
+        <div class="reveal">
           <span>3</span>
-          <h3>Izrada ponude</h3>
-          <p>Dobijate cenu prema merama, materijalu i složenosti izrade.</p>
+          <h3>Dobijate ponudu</h3>
+          <p>Cena se formira prema merama, materijalu, okovima i složenosti montaže.</p>
         </div>
-        <div>
+        <div class="reveal">
           <span>4</span>
           <h3>Izrada i montaža</h3>
           <p>Elementi se izrađuju po meri i montiraju na dogovorenu adresu.</p>
@@ -206,14 +249,35 @@
       </div>
     </section>
 
+    <section class="section faq" aria-label="Česta pitanja">
+      <div class="section-title reveal">
+        <p class="eyebrow dark">Kratko i jasno</p>
+        <h2>Šta treba poslati za početnu procenu?</h2>
+      </div>
+      <div class="faq-grid">
+        <article class="reveal">
+          <h3>Za kuhinju</h3>
+          <p>Pošaljite širinu zida, visinu plafona, gde su voda, struja, aspirator i približno koje aparate planirate.</p>
+        </article>
+        <article class="reveal">
+          <h3>Za plakar</h3>
+          <p>Pošaljite širinu, visinu, dubinu, da li želite klizna ili klasična vrata, fioke, police i ogledalo.</p>
+        </article>
+        <article class="reveal">
+          <h3>Za komodu ili panel</h3>
+          <p>Pošaljite dimenzije zida, veličinu TV-a, željeni stil i da li treba sakriti kablove ili dodati rasvetu.</p>
+        </article>
+      </div>
+    </section>
+
     <section class="section cta-section" id="kontakt">
-      <div>
+      <div class="reveal">
         <p class="eyebrow">Kontakt</p>
         <h2>Pošaljite mere prostora i dobićete predlog rešenja</h2>
         <p>Za najbrži odgovor pošaljite fotografije prostora, približne dimenzije i šta želite da se napravi.</p>
       </div>
 
-      <div class="contact-card">
+      <div class="contact-card reveal">
         <a class="btn primary full" href="tel:+381600000000">Pozovi: +381 60 000 0000</a>
         <a class="btn secondary full" href="https://wa.me/381600000000" target="_blank" rel="noopener">Pošalji WhatsApp upit</a>
         <a class="plain-link" href="https://www.instagram.com/" target="_blank" rel="noopener">Instagram profil</a>
