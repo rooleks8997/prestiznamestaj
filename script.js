@@ -1,63 +1,55 @@
-const heroSwiper = new Swiper(".hero-swiper", {
-  loop: true,
-  speed: 1000,
-  effect: "fade",
-  fadeEffect: {
-    crossFade: true
-  },
-  autoplay: {
-    delay: 4300,
-    disableOnInteraction: false
-  },
-  pagination: {
-    el: ".swiper-pagination",
-    clickable: true
-  },
-  navigation: {
-    nextEl: ".swiper-button-next",
-    prevEl: ".swiper-button-prev"
-  }
+// Hamburger meni
+const hamburger = document.getElementById('hamburger');
+const navMenu = document.getElementById('nav-menu');
+const navLinks = document.querySelectorAll('.nav-link');
+
+hamburger.addEventListener('click', () => {
+    navMenu.classList.toggle('active');
+    hamburger.classList.toggle('active');
 });
 
-const gallerySwiper = new Swiper(".gallery-swiper", {
-  slidesPerView: "auto",
-  spaceBetween: 22,
-  grabCursor: true,
-  pagination: {
-    el: ".gallery-pagination",
-    clickable: true
-  }
+// Zatvori meni kada se klikne na link
+navLinks.forEach(link => {
+    link.addEventListener('click', () => {
+        navMenu.classList.remove('active');
+        hamburger.classList.remove('active');
+    });
 });
 
-const year = document.getElementById("year");
-if (year) {
-  year.textContent = new Date().getFullYear();
-}
+// Promena aktivnog linka pri skrolovanju (opciono)
+window.addEventListener('scroll', () => {
+    const sections = document.querySelectorAll('section');
+    const scrollPos = window.scrollY + 100;
 
-const glow = document.querySelector(".cursor-glow");
-if (glow && window.matchMedia("(pointer: fine)").matches) {
-  window.addEventListener("mousemove", (event) => {
-    glow.style.setProperty("--x", `${event.clientX}px`);
-    glow.style.setProperty("--y", `${event.clientY}px`);
-  });
-}
-
-const revealItems = document.querySelectorAll(".reveal");
-
-if ("IntersectionObserver" in window) {
-  const observer = new IntersectionObserver(
-    (entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add("visible");
-          observer.unobserve(entry.target);
+    sections.forEach(section => {
+        const id = section.getAttribute('id');
+        const navLink = document.querySelector(`.nav-link[href="#${id}"]`);
+        if (navLink && section.offsetTop <= scrollPos && (section.offsetTop + section.offsetHeight) > scrollPos) {
+            navLinks.forEach(l => l.classList.remove('active'));
+            navLink.classList.add('active');
         }
-      });
-    },
-    { threshold: 0.12 }
-  );
+    });
+});
 
-  revealItems.forEach((item) => observer.observe(item));
-} else {
-  revealItems.forEach((item) => item.classList.add("visible"));
-}
+// Dugme "Nazad na vrh"
+const backToTop = document.getElementById('backToTop');
+window.addEventListener('scroll', () => {
+    if (window.scrollY > 500) {
+        backToTop.classList.add('show');
+    } else {
+        backToTop.classList.remove('show');
+    }
+});
+
+backToTop.addEventListener('click', () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+});
+
+// Jednostavna validacija kontakt forme (samo sprečavanje praznog slanja)
+const contactForm = document.getElementById('contactForm');
+contactForm.addEventListener('submit', function(e) {
+    e.preventDefault();
+    // Ovde možeš dodati AJAX slanje podataka
+    alert('Hvala na poruci! Uskoro ćemo vas kontaktirati.');
+    contactForm.reset();
+});
